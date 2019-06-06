@@ -41,7 +41,7 @@ function get(int $postId, array $args = []): array
         return $relatedPostIds;
     }
 
-    $manualRelatedPostIds = array_column(carbon_get_post_meta($postId, 'helick_related_posts'), 'id');
+    $manualRelatedPostIds = array_column((array)carbon_get_post_meta($postId, 'helick_related_posts'), 'id');
     $manualRelatedPostIds = array_map('intval', $manualRelatedPostIds);
 
     $limit = $args['limit'] - count($manualRelatedPostIds);
