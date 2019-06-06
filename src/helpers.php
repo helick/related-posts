@@ -15,12 +15,12 @@ use WP_Query;
 function get(int $postId, array $args = []): array
 {
     $defaultArgs = [
-        'limit'        => 10,
+        'ep_integrate' => defined('EP_VERSION'),
         'post_types'   => ['post'],
         'taxonomies'   => ['category'],
         'terms'        => [],
         'terms_not_in' => [],
-        'ep_integrate' => defined('EP_VERSION'),
+        'limit'        => 10,
     ];
 
     $args = wp_parse_args($args, $defaultArgs);
@@ -48,23 +48,23 @@ function get(int $postId, array $args = []): array
 
     if ($limit > 0) {
         $queryArgs = [
+            'ep_integrate'   => $args['ep_integrate'],
+            'fields'         => 'ids',
             'post_type'      => $args['post_types'],
             'post_status'    => 'publish',
-            'posts_per_page' => $limit,
-            'order'          => 'DESC',
-            'tax_query'      => [],
-            'fields'         => 'ids',
             'post__not_in'   => array_merge([$postId], $manualRelatedPostIds),
-            'ep_integrate'   => $args['ep_integrate'],
+            'posts_per_page' => $limit,
+            'tax_query'      => [],
+            'order'          => 'DESC',
         ];
 
-        if (empty($args['terms'])) {
+        $terms = $args['terms'];
+
+        if (empty($terms)) {
             $terms = wp_get_object_terms($postId, $args['taxonomies']);
             if (is_wp_error($terms)) {
                 $terms = [];
             }
-        } else {
-            $terms = $args['terms'];
         }
 
         foreach ($terms as $term) {
