@@ -18,7 +18,7 @@ final class FlushCommand implements Bootable
     }
 
     /**
-     * Flush related posts transients.
+     * Flush transient data.
      *
      * @return void
      */
