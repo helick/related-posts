@@ -1,0 +1,39 @@
+{
+    "name": "helick/related-posts",
+    "type": "wordpress-plugin",
+    "description": "The Helick CMS library",
+    "keywords": [
+        "helick",
+        "related posts"
+    ],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/helick/related-posts/issues",
+        "source": "https://github.com/helick/related-posts"
+    },
+    "authors": [
+        {
+            "name": "Evgenii Nasyrov",
+            "email": "evgenii@helick.io"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Helick\\RelatedPosts\\": "src/"
+        }
+    },
+    "scripts": {
+        "lint": [
+            "phpcs -p --standard=psr2 src"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
