@@ -5,7 +5,7 @@ namespace Helick\RelatedPosts\Commands;
 use Helick\RelatedPosts\Contracts\Bootable;
 use WP_CLI;
 
-final class FlushCommand implements Bootable
+final class FlushTransientsCommand implements Bootable
 {
     /**
      * Boot the service.
@@ -14,7 +14,7 @@ final class FlushCommand implements Bootable
      */
     public static function boot(): void
     {
-        WP_CLI::add_command('helick-related-posts flush', static::class);
+        WP_CLI::add_command('helick-related-posts flush-transients', static::class);
     }
 
     /**
