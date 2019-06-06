@@ -48,7 +48,11 @@ $postIds = Helick\RelatedPosts\get(int $postId, array $args = []);
 To add related posts support to your custom post type simply declare the following:
 
 ``` php
-add_post_type_support('your-custom-post-type', 'helick-related-posts');
+add_filter('helick_related_posts_supported_post_types', function (array $postTypes) {
+    $postTypes[] = 'your-custom-post-type';
+
+    return $postTypes;
+});
 ```
 
 ## Contributing
