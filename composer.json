@@ -1,7 +1,7 @@
 {
     "name": "helick/related-posts",
     "type": "wordpress-plugin",
-    "description": "The Helick CMS library",
+    "description": "The Helick related posts plugin",
     "keywords": [
         "helick",
         "related posts"
