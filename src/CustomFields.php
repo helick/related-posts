@@ -34,11 +34,11 @@ final class CustomFields implements Bootable
          */
         $postTypes = apply_filters('helick_related_posts_supported_post_types', ['post']);
 
-        Container::make('post_meta', __('Related Posts', SLUG))
+        Container::make('post_meta', __('Related Posts', DOMAIN))
                  ->where('post_type', 'IN', (array)$postTypes)
                  ->add_fields([
-                     Field::make('association', 'helick_related_posts', __('Manually selected related posts', SLUG))
-                          ->set_help_text(__('By default, 10 related posts are dynamically generated.', SLUG))
+                     Field::make('association', 'helick_related_posts', __('Manually selected related posts', DOMAIN))
+                          ->set_help_text(__('By default, 10 related posts are dynamically generated.', DOMAIN))
                           ->set_types([
                               array_map(function (string $postType) {
                                   return [
