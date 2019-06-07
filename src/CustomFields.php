@@ -28,7 +28,7 @@ final class CustomFields implements Bootable
     public function register(): void
     {
         /**
-         * Control the post types that should get the related posts support.
+         * Control the supported post types.
          *
          * @param array $supportedPostTypes
          */
