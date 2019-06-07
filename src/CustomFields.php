@@ -34,12 +34,19 @@ final class CustomFields implements Bootable
          */
         $supportedPostTypes = apply_filters('helick_related_posts_supported_post_types', ['post']);
 
+        /**
+         * Control the associated post types.
+         *
+         * @param array $associatedPostTypes
+         */
+        $associatedPostTypes = apply_filters('helick_related_posts_associated_post_types', ['post']);
+
         $associationTypes = array_map(function (string $postType) {
             return [
                 'type'      => 'post',
                 'post_type' => $postType,
             ];
-        }, $supportedPostTypes);
+        }, $associatedPostTypes);
 
         Container::make('post_meta', __('Related Posts', DOMAIN))
                  ->where('post_type', 'IN', (array)$supportedPostTypes)

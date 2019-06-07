@@ -45,10 +45,20 @@ $postIds = Helick\RelatedPosts\get(int $postId, array $args = []);
 
 ### Custom post type support
 
-To add related posts support to your custom post type simply declare the following:
+Control supported post types:
 
 ``` php
 add_filter('helick_related_posts_supported_post_types', function (array $postTypes) {
+    $postTypes[] = 'your-custom-post-type';
+
+    return $postTypes;
+});
+```
+
+Control associated post types:
+
+``` php
+add_filter('helick_related_posts_associated_post_types', function (array $postTypes) {
     $postTypes[] = 'your-custom-post-type';
 
     return $postTypes;
