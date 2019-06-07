@@ -6,8 +6,8 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 
 The plugin provides a simple related posts functionality with the following features:
-- Admin UI for manually overriding related posts
-- ElasticPress integration
+- Ability to manually override related posts
+- [ElasticPress][link-elasticpress] integration
 
 ## Requirements
 
@@ -90,5 +90,6 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-packagist]: https://packagist.org/packages/helick/related-posts
 [link-code-quality]: https://scrutinizer-ci.com/g/helick/related-posts
 [link-downloads]: https://packagist.org/packages/helick/related-posts
+[link-elasticpress]: https://github.com/10up/ElasticPress
 [link-author]: https://github.com/nasyrov
 [link-contributors]: ../../contributors
