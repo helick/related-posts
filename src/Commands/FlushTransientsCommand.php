@@ -38,7 +38,10 @@ final class FlushTransientsCommand implements Bootable
     {
         global $wpdb;
 
-        $query = "DELETE FROM {$wpdb->options} WHERE `option_name` REGEXP '^_transient_helick_related_posts_[0-9]+_[^_]+$'";
+        $query =
+            "DELETE FROM {$wpdb->options} " .
+            "WHERE `option_name` REGEXP '^_transient_helick_related_posts_[0-9]+_[^_]+$'";
+
         $count = $wpdb->query($query);
 
         WP_CLI::success("{$count} related posts transients deleted.");
@@ -53,7 +56,10 @@ final class FlushTransientsCommand implements Bootable
     {
         global $wpdb;
 
-        $query = "DELETE FROM {$wpdb->options} WHERE `option_name` REGEXP '^_transient_timeout_helick_related_posts_[0-9]+_[^_]+$'";
+        $query =
+            "DELETE FROM {$wpdb->options} " .
+            "WHERE `option_name` REGEXP '^_transient_timeout_helick_related_posts_[0-9]+_[^_]+$'";
+
         $count = $wpdb->query($query);
 
         WP_CLI::success("{$count} related posts transient timeouts deleted.");
