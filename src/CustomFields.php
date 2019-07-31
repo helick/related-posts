@@ -4,7 +4,7 @@ namespace Helick\RelatedPosts;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
-use Helick\RelatedPosts\Contracts\Bootable;
+use Helick\Contracts\Bootable;
 
 final class CustomFields implements Bootable
 {

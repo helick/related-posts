@@ -2,7 +2,7 @@
 
 namespace Helick\RelatedPosts\Commands;
 
-use Helick\RelatedPosts\Contracts\Bootable;
+use Helick\Contracts\Bootable;
 use WP_CLI;
 
 final class FlushTransientsCommand implements Bootable
