@@ -53,7 +53,7 @@ final class CustomFields implements Bootable
                  ->add_fields([
                      Field::make('association', 'helick_related_posts', __('Manually selected related posts', DOMAIN))
                           ->set_help_text(__('By default, 10 related posts are dynamically generated.', DOMAIN))
-                          ->set_types([$associationTypes]),
+                          ->set_types($associationTypes),
                  ]);
     }
 }
